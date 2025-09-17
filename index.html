@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Web Developer — About Me</title>
+  <style>
+    :root{
+      --bg1: #0f172a; /* dark navy */
+      --bg2: #07103a; /* deep indigo */
+      --accent: #06b6d4; /* teal */
+      --card: rgba(255,255,255,0.04);
+      --glass: rgba(255,255,255,0.06);
+      --muted: rgba(255,255,255,0.7);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      background: linear-gradient(135deg,var(--bg1) 0%, var(--bg2) 100%);
+      color: #e6eef6;
+      -webkit-font-smoothing:antialiased;
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:32px;
+    }
+
+    .card{
+      width:100%;
+      max-width:900px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius:16px;
+      padding:28px;
+      box-shadow: 0 8px 30px rgba(2,6,23,0.6);
+      display:grid;
+      grid-template-columns: 220px 1fr;
+      gap:24px;
+      align-items:center;
+      border: 1px solid rgba(255,255,255,0.04);
+    }
+
+    .avatar{
+      width:180px;
+      height:180px;
+      border-radius:50%;
+      background: linear-gradient(135deg, rgba(6,182,212,0.12), rgba(99,102,241,0.08));
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      flex-direction:column;
+      margin:auto;
+      position:relative;
+      overflow:hidden;
+      border: 3px solid rgba(255,255,255,0.06);
+    }
+    .avatar .initials{
+      font-weight:700;
+      font-size:48px;
+      letter-spacing:1px;
+      color:var(--accent);
+    }
+    .avatar small{color:var(--muted);margin-top:6px;}
+
+    header h1{margin:0;font-size:22px;}
+    header p{margin:6px 0 0;color:var(--muted)}
+
+    .bio{
+      color:#dcefff;
+      line-height:1.5;
+      margin-top:12px;
+      font-size:15px;
+    }
+
+    .skills{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+    .skill{
+      padding:8px 10px;border-radius:999px;font-weight:600;font-size:13px;
+      background:linear-gradient(90deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
+      border:1px solid rgba(255,255,255,0.03);
+      color:var(--muted);
+    }
+
+    .actions{display:flex;gap:12px;margin-top:18px}
+    .btn{
+      padding:10px 14px;border-radius:10px;border:0;cursor:pointer;font-weight:700;font-size:14px;
+      background:linear-gradient(90deg,var(--accent), #7c3aed);
+      color:#042023;
+      box-shadow: 0 6px 18px rgba(7,16,36,0.45);
+      transition:transform .12s ease, box-shadow .12s ease; 
+    }
+    .btn.secondary{
+      background:transparent;
+      color:var(--muted);
+      border:1px solid rgba(255,255,255,0.04);
+      box-shadow:none;
+    }
+    .btn:hover{transform:translateY(-3px)}
+
+    /* subtle tech list on the right */
+    .meta{background:var(--glass);padding:16px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
+    .meta h3{margin:0 0 8px 0;font-size:14px}
+    .meta ul{margin:0;padding:0;list-style:none}
+    .meta li{font-size:13px;padding:8px 6px;border-radius:8px;margin-bottom:6px;color:var(--muted);}
+
+    /* responsive */
+    @media (max-width:720px){
+      .card{grid-template-columns:1fr; padding:22px}
+      .avatar{width:140px;height:140px}
+    }
+
+  </style>
+</head>
+<body>
+  <main class="card" role="main">
+    <aside class="avatar" aria-hidden="false">
+      <div class="initials">GD</div>
+      <small>Front‑end & UI</small>
+    </aside>
+
+    <section>
+      <header>
+        <h1>Hi — I'm Goodnews, a Web Developer</h1>
+        <p>Building fast, accessible, and delightful interfaces for the web.</p>
+      </header>
+
+      <p class="bio">I design and build responsive web applications with a focus on performance and developer experience. I enjoy turning complex problems into simple, elegant user experiences. My work balances clean code, thoughtful UI, and pragmatic engineering.</p>
+
+      <div class="skills" aria-label="Skills">
+        <div class="skill">HTML</div>
+        <div class="skill">CSS / Flexbox / Grid</div>
+        <div class="skill">JavaScript (ES6+)</div>
+        <div class="skill">React / Next.js</div>
+        <div class="skill">TypeScript</div>
+        <div class="skill">Accessibility (a11y)</div>
+        <div class="skill">UI Design</div>
+      </div>
+
+      <div class="actions">
+        <button class="btn" onclick="window.location='#contact'">Contact</button>
+        <button class="btn secondary" onclick="window.location='#projects'">See projects</button>
+      </div>
+
+      <div id="projects" style="margin-top:18px">
+        <div class="meta">
+          <h3>Notable tools & workflow</h3>
+          <ul>
+            <li>Git & GitHub — source control & PR workflow</li>
+            <li>Vite / Next.js — fast dev + SSR where needed</li>
+            <li>Tailwind / PostCSS — utility-first styling</li>
+            <li>Jest / Playwright — tests & automation</li>
+            <li>CI / CD — GitHub Actions</li>
+          </ul>
+        </div>
+      </div>
+
+    </section>
+
+    <aside id="contact" style="grid-column:1 / -1; margin-top:18px;">
+      <div class="meta">
+        <h3>Contact</h3>
+        <p style="margin:6px 0 0;color:var(--muted)">Email: <strong style="color:#eaf9ff">hello@example.com</strong></p>
+        <p style="margin:6px 0 0;color:var(--muted)">Location: Lagos, Nigeria</p>
+      </div>
+    </aside>
+
+  </main>
+</body>
+</html>
